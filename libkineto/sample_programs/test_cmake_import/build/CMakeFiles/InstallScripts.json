@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/jeromeku/cupti_profiler/kineto/libkineto/sample_programs/test_cmake_import/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

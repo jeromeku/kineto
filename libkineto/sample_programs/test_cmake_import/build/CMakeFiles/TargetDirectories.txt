@@ -1,0 +1,2 @@
+/home/jeromeku/cupti_profiler/kineto/libkineto/sample_programs/test_cmake_import/build/CMakeFiles/edit_cache.dir
+/home/jeromeku/cupti_profiler/kineto/libkineto/sample_programs/test_cmake_import/build/CMakeFiles/rebuild_cache.dir

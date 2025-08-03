@@ -1,0 +1,57 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/jeromeku/cupti_profiler/.cupti-env/lib/python3.12/site-packages/cmake/data/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.8.0-52-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/jeromeku/cupti_profiler/.cupti-env/lib/python3.12/site-packages/cmake/data/share/cmake-4.0/Modules/FindCUDAToolkit.cmake:681 (message)"
+      - "/home/jeromeku/cupti_profiler/.cupti-env/lib/python3.12/site-packages/cmake/data/share/cmake-4.0/Modules/FindCUDAToolkit.cmake:814 (_CUDAToolkit_find_root_dir)"
+      - "CMakeLists.txt:8 (find_package)"
+    message: |
+      Executed nvcc to extract CUDAToolkit information:
+      nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+      #$ _NVVM_BRANCH_=nvvm
+      #$ _SPACE_= 
+      #$ _CUDART_=cudart
+      #$ _HERE_=/usr/lib/nvidia-cuda-toolkit/bin
+      #$ _THERE_=/usr/lib/nvidia-cuda-toolkit/bin
+      #$ _TARGET_SIZE_=
+      #$ _TARGET_DIR_=
+      #$ _TARGET_SIZE_=64
+      #$ CICC_PATH=/usr/lib/nvidia-cuda-toolkit/bin
+      #$ NVVMIR_LIBRARY_DIR=/usr/lib/nvidia-cuda-toolkit/libdevice
+      #$ PATH=/usr/lib/nvidia-cuda-toolkit/bin:/home/jeromeku/cupti_profiler/.cupti-env/bin:/home/jeromeku/.vscode-server/cli/servers/Stable-2901c5ac6db8a986a5666c3af51ff804d05af0d4/server/bin/remote-cli:/home/jeromeku/.local/bin:/home/jeromeku/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/jeromeku/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand
+      #$ LIBRARIES=  -L/usr/lib/x86_64-linux-gnu/stubs -L/usr/lib/x86_64-linux-gnu
+      nvcc fatal   : Don't know what to do with '__cmake_determine_cuda'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/jeromeku/cupti_profiler/.cupti-env/lib/python3.12/site-packages/cmake/data/share/cmake-4.0/Modules/FindCUDAToolkit.cmake:724 (message)"
+      - "/home/jeromeku/cupti_profiler/.cupti-env/lib/python3.12/site-packages/cmake/data/share/cmake-4.0/Modules/FindCUDAToolkit.cmake:814 (_CUDAToolkit_find_root_dir)"
+      - "CMakeLists.txt:8 (find_package)"
+    message: |
+      Parsed CUDAToolkit nvcc implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        link line: [cuda-fake-ld   -L/usr/lib/x86_64-linux-gnu/stubs -L/usr/lib/x86_64-linux-gnu]
+          arg [cuda-fake-ld] ==> ignore
+          arg [-L/usr/lib/x86_64-linux-gnu/stubs] ==> dir [/usr/lib/x86_64-linux-gnu/stubs]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/x86_64-linux-gnu/stubs] ==> [/usr/lib/x86_64-linux-gnu/stubs]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: [/usr/lib/x86_64-linux-gnu/stubs;/usr/lib/x86_64-linux-gnu]
+        implicit fwks: []
+      
+      /usr/lib/x86_64-linux-gnu/stubs;/usr/lib/x86_64-linux-gnu
+      
+...

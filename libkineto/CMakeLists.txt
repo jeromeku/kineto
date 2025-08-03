@@ -54,6 +54,13 @@ endif()
 option(LIBKINETO_NOCUPTI "Disable CUPTI" OFF)
 
 find_package(CUDAToolkit)
+
+if(TARGET CUDA::nvperf_host)
+  message(STATUS "nvperf found at: $<TARGET_FILE:CUDA::nvperf_host>")
+else()
+  message(WARNING "No CUDA::nvperf_host target – will try manual search")
+endif()
+
 if(NOT LIBKINETO_NOCUPTI)
   if(NOT CUPTI_INCLUDE_DIR)
     find_path(CUPTI_INCLUDE_DIR cupti.h PATHS
@@ -97,7 +104,10 @@ if(NOT TARGET CUDA::nvperf_host)
     message(STATUS "Found NVPERF: ${CUDA_NVPERF_HOST_LIB_PATH}")
     add_library(CUDA::nvperf_host INTERFACE IMPORTED)
     target_link_libraries(CUDA::nvperf_host INTERFACE "${CUDA_NVPERF_HOST_LIB_PATH}")
+  else()
+    message(STATUS "NOT FOUND NVPERF: ${CUDA_NVPERF_HOST_LIB_PATH}")
   endif()
+  
 endif()
 
 IF (NOT ROCM_SOURCE_DIR AND NOT ROCTRACER_INCLUDE_DIR)
@@ -229,7 +239,7 @@ if(BUILD_SHARED_LIBS)
 endif()
 
 set_target_properties(kineto kineto_base kineto_api PROPERTIES
-      CXX_STANDARD 17
+      CXX_STANDARD 20
       CXX_STANDARD_REQUIRED YES
       CXX_EXTENSIONS NO)
 
